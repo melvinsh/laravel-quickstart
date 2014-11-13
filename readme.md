@@ -2,6 +2,7 @@
 This is a standard laravel project but I added, changed, and removed a couple of things..
 
 ### My changes
+```
 - Added my hostname to bootstrap.php.
 - Added deploy and seed and serve scripts (bin).
 
@@ -17,3 +18,4 @@ This is a standard laravel project but I added, changed, and removed a couple of
 - Added example migration and seed for users.
 
 - Removed CONTRIBUTING.md
+```
