@@ -24,4 +24,5 @@ Route::group(array('before' => 'csrf'), function () {
  */
 Route::group(array('before' => 'auth'), function () {
 	Route::get('dashboard', 'DashboardController@showDashboard');
+	Route::get('user/settings', 'UserController@showSettings');
 });

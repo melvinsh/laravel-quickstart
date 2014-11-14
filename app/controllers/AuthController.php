@@ -51,16 +51,12 @@ class AuthController extends BaseController {
 	/**
 	 * Try to sign up a user.
 	 * Validates email and password fields.
+	 * On error: redirect back to signup with validator errors.
 	 * On success: redirect to dashboard with welcome message.
 	 */
 	public function trySignUp() {
 
-		$rules = array(
-			'email' => 'required|email|unique:users',
-			'password' => 'required|min:8|confirmed',
-		);
-
-		$validator = Validator::make(Input::all(), $rules);
+		$validator = Validator::make(Input::all(), User::rules());
 
 		if ($validator->fails()) {
 			return Redirect::to('signup')

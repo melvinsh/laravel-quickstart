@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Laravel Quickstart :)</title>
+    <title>Laravel Quickstart</title>
 
     {{ HTML::style('css/bootstrap.min.css'); }}
     {{ HTML::style('css/style.css'); }}
@@ -19,14 +19,13 @@
   </head>
 
   <body role="document">
-
     @include('includes.navbar')
 
     <div class="container theme-showcase" role="main">
 
     	@yield('content')
 
-    </div> <!-- /container -->
+    </div>
 
     {{ HTML::script('js/jquery.min.js'); }}
     {{ HTML::script('js/bootstrap.min.js'); }}
