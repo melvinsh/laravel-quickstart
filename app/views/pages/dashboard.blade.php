@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if($alert = Session::get('message'))
+  <div class="alert alert-success">
+    {{{ $alert }}}
+  </div>
+@endif
+
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
 <h1>Hello, world!</h1>

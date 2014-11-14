@@ -10,26 +10,32 @@
       </button>
       <a class="navbar-brand" href="#">Laravel Quickstart</a>
     </div>
-    @if (Auth::check())
 	    <div id="navbar" class="navbar-collapse collapse">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Dashboard</a></li>
-	        <li><a href="#about">Things</a></li>
-	        <li><a href="#contact">Other things</a></li>
-	      </ul>
+		    @if (Auth::check())
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Dashboard</a></li>
+		        <li><a href="#about">Things</a></li>
+		        <li><a href="#contact">Other things</a></li>
+		      </ul>
 
-	      <ul class="nav navbar-nav navbar-right">
-	          <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->email }} <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="#">Profile</a></li>
-	            <li><a href="#">Settings</a></li>
-	            <li class="divider"></li>
-	            <li><a href="/logout">Sign out</a></li>
-	          </ul>
-	        </li>
-      	</ul>
+		      <ul class="nav navbar-nav navbar-right">
+		          <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->email }} <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="#">Profile</a></li>
+		            <li><a href="#">Settings</a></li>
+		            <li class="divider"></li>
+		            <li><a href="/logout">Sign out</a></li>
+		          </ul>
+		        </li>
+		  </ul>
+		@endif
+		@if (!Auth::check())
+		<ul class="nav navbar-nav navbar-right">
+	            <li><a href="/login">Sign in</a></li>
+		        <li><a href="/signup">Sign up</a></li>
+		</ul>
+		@endif
 	    </div><!--/.nav-collapse -->
-    @endif
   </div>
 </nav>
