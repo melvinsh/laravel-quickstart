@@ -13,8 +13,8 @@ Route::get('logout', 'AuthController@logout');
 Route::get('signup', 'AuthController@showSignUp');
 
 Route::group(array('before' => 'csrf'), function () {
-	Route::post('login', 'AuthController@tryLogin');
-	Route::post('signup', 'AuthController@trySignUp');
+	Route::post('login', array('as' => 'login', 'uses' => 'AuthController@tryLogin'));
+	Route::post('signup', array('as' => 'signup', 'uses' => 'AuthController@trySignUp'));
 });
 
 /*

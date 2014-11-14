@@ -3,8 +3,7 @@
 class AuthController extends BaseController {
 
 	/**
-	 * [showLogin description]
-	 * @return [type] [description]
+	 * Show the login screen to the user.
 	 */
 	public function showLogin() {
 		if (Auth::check()) {
@@ -15,8 +14,9 @@ class AuthController extends BaseController {
 	}
 
 	/**
-	 * [tryLogin description]
-	 * @return [type] [description]
+	 * Try to log the user in using email and password.
+	 * On success: redirect to dashboard with welcome message.
+	 * On error: redirect to login with error message,
 	 */
 	public function tryLogin() {
 
@@ -29,8 +29,7 @@ class AuthController extends BaseController {
 	}
 
 	/**
-	 * [logout description]
-	 * @return [type] [description]
+	 * Logout user and redirect to login screen.
 	 */
 	public function logout() {
 		Auth::logout();
@@ -38,8 +37,8 @@ class AuthController extends BaseController {
 	}
 
 	/**
-	 * [showSignUp description]
-	 * @return [type] [description]
+	 * Show signup screen.
+	 * Redirect to dashboard if a user is signed in.
 	 */
 	public function showSignUp() {
 		if (Auth::check()) {
@@ -50,8 +49,9 @@ class AuthController extends BaseController {
 	}
 
 	/**
-	 * [trySignUp description]
-	 * @return [type] [description]
+	 * Try to sign up a user.
+	 * Validates email and password fields.
+	 * On success: redirect to dashboard with welcome message.
 	 */
 	public function trySignUp() {
 
@@ -62,8 +62,10 @@ class AuthController extends BaseController {
 
 		$validator = Validator::make(Input::all(), $rules);
 
-		if ($validator                ->fails()) {
-			return Redirect::to('signup')->withErrors($validator)->withInput(Input::except('password'));;
+		if ($validator->fails()) {
+			return Redirect::to('signup')
+			->withErrors($validator)
+			->withInput(Input::except(array('password', 'password_confirm')));;
 		}
 
 		$user = User::create(array(
@@ -71,9 +73,12 @@ class AuthController extends BaseController {
 			'password' => Hash::make(Input::get('password'))
 		));
 
+		$user->save();
+
 		Auth::login($user);
 
-		return Redirect::to('dashboard')->with('message', 'Welcome to Laravel Quickstart!');
+		return Redirect::to('dashboard')
+			->with('message', 'Welcome to Laravel Quickstart!');
 
 	}
 

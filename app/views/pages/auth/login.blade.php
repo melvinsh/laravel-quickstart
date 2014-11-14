@@ -11,13 +11,13 @@
 		  </div>
 		@endif
 
-		<form class="form-signin" role="form" action="/login" method="post">
+		{{ Form::open(array('route' => 'login')) }}
 		    <input name="email" type="email" class="form-control" value="demo@demo.local" required autofocus>
 		    <input name="password" type="password" class="form-control" value="demo!" required>
-		    <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
-		    <br>
+		    <input name="_token" type="hidden" value="{{{ csrf_token() }}}"><br>
 		    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-		</form>
+		{{ Form::close() }}
+
 	</div>
 </div>
 @stop
