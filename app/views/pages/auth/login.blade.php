@@ -11,7 +11,7 @@
 		  </div>
 		@endif
 
-		{{ Form::open(array('route' => 'login')) }}
+		{{ Form::open(array('route' => 'post_login')) }}
 		    <input name="email" type="email" class="form-control" value="demo@demo.local" required autofocus>
 		    <input name="password" type="password" class="form-control" value="demo!" required>
 		    <input name="_token" type="hidden" value="{{{ csrf_token() }}}"><br>

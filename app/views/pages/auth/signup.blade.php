@@ -11,7 +11,7 @@
 		  </div>
 		@endif
 
-		{{ Form::open(array('route' => 'signup')) }}
+		{{ Form::open(array('route' => 'post_signup')) }}
 		    <input name="email" type="email" class="form-control" placeholder="email@example.com" value="{{{ Input::old('email') }}}" required autofocus>
 		    <input name="password" type="password" class="form-control" placeholder="Password" required>
 		    <input name="password_confirmation" type="password" class="form-control" placeholder="Confirm password" required>
