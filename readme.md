@@ -1,6 +1,15 @@
 ## Laravel Quickstart
 This is a standard laravel project but I added, changed, and removed a couple of things get started more quickly..
 
+### Getting started
+```
+cd laravel-quickstart 
+nano bootstrap/start.php # add your own hostname here
+bin/deploy
+bin/seed
+bin/serve
+```
+
 ### My changes
 ```
 - Added my hostname to [bootstrap / start.php].
