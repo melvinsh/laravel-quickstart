@@ -15,7 +15,6 @@
           <ul class="nav navbar-nav">
             <li><a href="{{{ route('get_dashboard') }}}">Dashboard</a></li>
             <li><a href="{{{ route('get_records') }}}">Records</a></li>
-            <li><a href="#contact">Other things</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
