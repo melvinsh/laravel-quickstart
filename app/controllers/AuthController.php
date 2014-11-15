@@ -90,8 +90,7 @@ class AuthController extends BaseController {
 
 		Auth::login($user);
 
-		return Redirect::to('dashboard')
-			->with('message', 'Welcome to Laravel Quickstart!');
+		return Redirect::to('dashboard');
 
 	}
 
