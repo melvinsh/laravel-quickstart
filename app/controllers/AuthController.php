@@ -73,6 +73,8 @@ class AuthController extends BaseController {
 			'password' => 'required|min:8|confirmed',
 		);
 
+		Input::get('email') = strtolower(Input::get('email'));
+
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
@@ -82,7 +84,7 @@ class AuthController extends BaseController {
 		}
 
 		$user = User::create(array(
-			'email' => strtolower(Input::get('email')),
+			'email' => Input::get('email'),
 			'password' => Hash::make(Input::get('password'))
 		));
 
