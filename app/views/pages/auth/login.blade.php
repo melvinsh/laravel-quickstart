@@ -15,7 +15,7 @@
 		    <input name="email" type="email" class="form-control" value="demo@demo.local" required autofocus>
 		    <input name="password" type="password" class="form-control" value="demo!" required>
 		    <input name="_token" type="hidden" value="{{{ csrf_token() }}}"><br>
-		    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+		    <button class="btn btn-default btn-block" type="submit">Sign in</button>
 		{{ Form::close() }}
 
 	</div>

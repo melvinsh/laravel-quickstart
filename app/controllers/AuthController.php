@@ -20,11 +20,23 @@ class AuthController extends BaseController {
 	 */
 	public function tryLogin() {
 
-		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
-			return Redirect::intended('dashboard')->with('message', 'Welcome back!');;
+		$attempt = Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
+
+		if (!$attempt) {
+			return Redirect::to('login')->with('error', 'Unknown username/password combination.');
 		}
 
-		return Redirect::to('login')->with('error', 'Unknown username/password combination.');
+		$firstTime = !(Auth::user()->has_signed_in_once);
+
+		Auth::user()->saveSignIn();
+
+		if ($firstTime) {
+
+			return Redirect::intended('dashboard')
+				->with('message', 'Welcome! Please read the instructions below!');
+		}
+
+		return Redirect::intended('dashboard');
 
 	}
 
@@ -56,7 +68,12 @@ class AuthController extends BaseController {
 	 */
 	public function trySignUp() {
 
-		$validator = Validator::make(Input::all(), User::rules());
+		$rules = array(
+			'email' => 'required|email|unique:users',
+			'password' => 'required|min:8|confirmed',
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
 			return Redirect::to('signup')

@@ -16,7 +16,7 @@
 		    <input name="password" type="password" class="form-control" placeholder="Password" required>
 		    <input name="password_confirmation" type="password" class="form-control" placeholder="Confirm password" required>
 		    <input type="hidden" name="_token" value="{{{ csrf_token() }}}"><br>
-		    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+		    <button class="btn btn-default btn-block" type="submit">Sign up</button>
 		{{ Form::close() }}
 	</div>
 </div>

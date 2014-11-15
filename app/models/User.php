@@ -31,14 +31,85 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	/**
-	 * Validator rules for signup.
-	 * @return array Array of validator rules.
+	 * [comments description]
+	 * @return [type] [description]
 	 */
-	public static function rules() {
-		return array(
-			'email' => 'required|email|unique:users',
-			'password' => 'required|min:8|confirmed',
-		);
+	public function records() {
+		return $this->hasMany('Record');
+	}
+
+	/**
+	 * [recordCount description]
+	 * @return [type] [description]
+	 */
+	private function recordCount() {
+		return $this->records()->count();
+	}
+
+	public function saveSignIn() {
+		$this->has_signed_in_once = true;
+		$this->last_signin = date('Y-m-d H:i:s');
+
+		$this->save();
+	}
+
+	/**
+	 * [echoRecordCount description]
+	 * @return [type] [description]
+	 */
+	public function echoRecordCount() {
+		if ($this->recordCount() == 1) {
+			return $this->recordCount() . " record";
+		}
+
+		return $this->recordCount() . " records";
+	}
+
+	/**
+	 * [passwordMatches description]
+	 * @param  [type] $password [description]
+	 * @return [type]           [description]
+	 */
+	private function passwordMatches($password) {
+		if (Hash::check($password, $this->password)) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * [changeEmail description]
+	 * @param  [type] $new_email [description]
+	 * @return [type]            [description]
+	 */
+	public function changeEmail($new_email, $password) {
+		if (!$this->passwordMatches($password)) {
+			return false;
+		}
+
+		$user = Auth::user();
+		$user->email = $new_email;
+		$user->save();
+
+		return true;
+	}
+
+	/**
+	 * [changePassword description]
+	 * @param  [type] $new_password [description]
+	 * @param  [type] $password     [description]
+	 * @return [type]               [description]
+	 */
+	public function changePassword($new_password, $password) {
+		if (!$this->passwordMatches($password)) {
+			return false;
+		}
+
+		$user = Auth::user();
+		$user->password = Hash::make($new_password);
+		$user->save();
+
+		return true;
 	}
 
 }

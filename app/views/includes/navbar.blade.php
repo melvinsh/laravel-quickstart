@@ -13,8 +13,8 @@
 	    <div id="navbar" class="navbar-collapse collapse">
 		    @if (Auth::check())
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="{{{ route('get_dashboard') }}}">Dashboard</a></li>
-		        <li><a href="#about">Things</a></li>
+		        <li><a href="{{{ route('get_dashboard') }}}">Dashboard</a></li>
+		        <li><a href="{{{ route('get_records') }}}">Records</a></li>
 		        <li><a href="#contact">Other things</a></li>
 		      </ul>
 
@@ -22,7 +22,7 @@
 		          <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->email }} <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="#">Profile</a></li>
+		            <li><a href="{{{ route('show_profile', array('id' => Auth::user()->id)) }}}">Profile</a></li>
 		            <li><a href="{{{ route('get_settings') }}}">Settings</a></li>
 		            <li class="divider"></li>
 		            <li><a href="{{{ route('get_logout') }}}">Sign out</a></li>
