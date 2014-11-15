@@ -88,7 +88,8 @@ class AuthController extends BaseController {
 
 		$user->save();
 
-		Auth::login($user);
+		// Can't Auth::login($user) here because we want the firstTime message.
+		$this->tryLogin();
 
 		return Redirect::to('dashboard');
 
