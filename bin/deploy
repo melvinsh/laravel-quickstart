@@ -1,2 +1,4 @@
+touch app/database/production.sqlite
+touch app/database/local.sqlite
 composer install
 php artisan migrate --force
