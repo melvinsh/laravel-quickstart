@@ -20,7 +20,7 @@ class AuthController extends BaseController {
 	 */
 	public function tryLogin() {
 
-		$attempt = Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
+		$attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
 
 		if (!$attempt) {
 			return Redirect::to('login')->with('error', 'Unknown username/password combination.');
@@ -82,7 +82,7 @@ class AuthController extends BaseController {
 		}
 
 		$user = User::create(array(
-			'email' => Input::get('email'),
+			'email' => strtolower(Input::get('email')),
 			'password' => Hash::make(Input::get('password'))
 		));
 
