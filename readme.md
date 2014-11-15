@@ -24,3 +24,13 @@ This is a standard laravel project but I added, changed, and removed a couple of
 
 - Removed CONTRIBUTING.md
 ```
+
+### Screenies
+#### Dashboard
+![screen shot 2014-11-15 at 23 36 47](https://cloud.githubusercontent.com/assets/1312973/5059579/9be62026-6d20-11e4-8a06-53f949b0bfa4.png)
+#### Records
+![screen shot 2014-11-15 at 23 36 59](https://cloud.githubusercontent.com/assets/1312973/5059582/aea52b62-6d20-11e4-8dac-3a80b6dcdd56.png)
+#### Settings
+![screen shot 2014-11-15 at 23 37 04](https://cloud.githubusercontent.com/assets/1312973/5059584/bfd67f8a-6d20-11e4-9f79-2977ce10d9b5.png)
+
+
