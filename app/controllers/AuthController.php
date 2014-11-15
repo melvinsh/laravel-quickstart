@@ -1,101 +1,107 @@
 <?php
 
-class AuthController extends BaseController {
+class AuthController extends BaseController
+{
 
-	/**
-	 * Show the login screen to the user.
-	 */
-	public function showLogin() {
-		if (Auth::check()) {
-			return Redirect::to('dashboard');
-		}
+    /**
+     * Show the login screen to the user.
+     */
+    public function showLogin()
+    {
+        if (Auth::check()) {
+            return Redirect::to('dashboard');
+        }
 
-		return View::make('pages.auth.login');
-	}
+        return View::make('pages.auth.login');
+    }
 
-	/**
-	 * Try to log the user in using email and password.
-	 * On success: redirect to dashboard with welcome message.
-	 * On error: redirect to login with error message,
-	 */
-	public function tryLogin() {
+    /**
+     * Logout user and redirect to login screen.
+     */
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('login');
+    }
 
-		$attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
+    /**
+     * Show signup screen.
+     * Redirect to dashboard if a user is signed in.
+     */
+    public function showSignUp()
+    {
+        if (Auth::check()) {
+            return Redirect::to('dashboard');
+        }
 
-		if (!$attempt) {
-			return Redirect::to('login')->with('error', 'Unknown username/password combination.');
-		}
+        return View::make('pages.auth.signup');
+    }
 
-		$firstTime = !(Auth::user()->has_signed_in_once);
+    /**
+     * Try to sign up a user.
+     * Validates email and password fields.
+     * On error: redirect back to signup with validator errors.
+     * On success: redirect to dashboard with welcome message.
+     */
+    public function trySignUp()
+    {
 
-		Auth::user()->saveSignIn();
+        $rules = array(
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
+        );
 
-		if ($firstTime) {
+        $validator = Validator::make(array(
+            'email' => strtolower(Input::get('email')),
+            'password' => Input::get('passsword')
+        ), $rules);
 
-			return Redirect::intended('dashboard')
-				->with('message', 'Welcome! Please read the instructions below!');
-		}
+        if ($validator->fails()) {
+            return Redirect::to('signup')
+                ->withErrors($validator)
+                ->withInput(Input::except(array('password', 'password_confirm')));;
+        }
 
-		return Redirect::intended('dashboard');
+        $user = User::create(array(
+            'email' => Input::get('email'),
+            'password' => Hash::make(Input::get('password'))
+        ));
 
-	}
+        $user->save();
 
-	/**
-	 * Logout user and redirect to login screen.
-	 */
-	public function logout() {
-		Auth::logout();
-		return Redirect::to('login');
-	}
+        // Can't Auth::login($user) here because we want the firstTime message.
+        $this->tryLogin();
 
-	/**
-	 * Show signup screen.
-	 * Redirect to dashboard if a user is signed in.
-	 */
-	public function showSignUp() {
-		if (Auth::check()) {
-			return Redirect::to('dashboard');
-		}
+        return Redirect::to('dashboard');
 
-		return View::make('pages.auth.signup');
-	}
+    }
 
-	/**
-	 * Try to sign up a user.
-	 * Validates email and password fields.
-	 * On error: redirect back to signup with validator errors.
-	 * On success: redirect to dashboard with welcome message.
-	 */
-	public function trySignUp() {
+    /**
+     * Try to log the user in using email and password.
+     * On success: redirect to dashboard with welcome message.
+     * On error: redirect to login with error message,
+     */
+    public function tryLogin()
+    {
 
-		$rules = array(
-			'email' => 'required|email|unique:users',
-			'password' => 'required|min:8|confirmed',
-		);
+        $attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
 
-		$validator = Validator::make(array(
-			'email' => strtolower(Input::get('email')),
-			'password' => Input::get('passsword')
-		), $rules);
+        if (!$attempt) {
+            return Redirect::to('login')->with('error', 'Unknown username/password combination.');
+        }
 
-		if ($validator->fails()) {
-			return Redirect::to('signup')
-			->withErrors($validator)
-			->withInput(Input::except(array('password', 'password_confirm')));;
-		}
+        $firstTime = !(Auth::user()->has_signed_in_once);
 
-		$user = User::create(array(
-			'email' => Input::get('email'),
-			'password' => Hash::make(Input::get('password'))
-		));
+        Auth::user()->saveSignIn();
 
-		$user->save();
+        if ($firstTime) {
 
-		// Can't Auth::login($user) here because we want the firstTime message.
-		$this->tryLogin();
+            return Redirect::intended('dashboard')
+                ->with('message', 'Welcome! Please read the instructions below!');
+        }
 
-		return Redirect::to('dashboard');
+        return Redirect::intended('dashboard');
 
-	}
+    }
 
 }
