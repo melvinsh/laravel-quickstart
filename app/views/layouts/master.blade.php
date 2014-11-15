@@ -20,13 +20,11 @@
 
   <body role="document">
     @include('includes.navbar')
-
     <div class="container theme-showcase" role="main">
 
     	@yield('content')
 
     </div>
-
     {{ HTML::script('js/jquery.min.js'); }}
     {{ HTML::script('js/bootstrap.min.js'); }}
   </body>

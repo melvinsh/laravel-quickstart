@@ -9,7 +9,6 @@ class RecordController extends BaseController
     public function showRecords()
     {
         $records = Auth::user()->records()->get();
-
         return View::make('pages.records.index')->with('records', $records);
     }
 

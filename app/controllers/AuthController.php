@@ -95,7 +95,6 @@ class AuthController extends BaseController
         Auth::user()->saveSignIn();
 
         if ($firstTime) {
-
             return Redirect::intended('dashboard')
                 ->with('message', 'Welcome! Please read the instructions below!');
         }

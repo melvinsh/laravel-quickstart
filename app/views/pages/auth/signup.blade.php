@@ -6,9 +6,9 @@
 		<h1 class="page-header">Sign up</h1>
 
 		@if($errors->first())
-		  <div class="alert alert-danger">
-		    {{{ $errors->first() }}}
-		  </div>
+		    <div class="alert alert-danger">
+		        {{{ $errors->first() }}}
+		    </div>
 		@endif
 
 		{{ Form::open(array('route' => 'post_signup')) }}
