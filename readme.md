@@ -1,5 +1,5 @@
 ## Laravel Quickstart
-This is a standard laravel project but I added, changed, and removed a couple of things get started more quickly..
+This is a standard laravel project but I added, changed, and removed some things and created example controllers, models, views, routes, migrations and seeds to get started more quickly with your Laravel project. Please submit issues if you find them but have a look at `todo.md` first. Thanks!
 
 ### Getting started
 ```
