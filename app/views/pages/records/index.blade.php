@@ -54,6 +54,7 @@
 	    <input name="artist" type="text" class="form-control" placeholder="Artist" value="{{{ Input::old('artist') }}}" required>
 	    <input name="title" type="text" class="form-control" placeholder="Title" value="{{{ Input::old('title') }}}" required>
 	    <input name="year" type="number" class="form-control" placeholder="Year" value="{{{ Input::old('year') }}}">
+	    <br>
 	    <button class="btn btn-default" type="submit">Add record</button>
 	{{ Form::close() }}
 </div>

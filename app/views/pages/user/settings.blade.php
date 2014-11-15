@@ -31,6 +31,7 @@
 		<input name="current_email" type="email" class="form-control" placeholder="email@example.com" value="{{{ Auth::user()->email }}}" disabled>
 		<input name="new_email" type="email" class="form-control" placeholder="New e-mail" required>
 		<input name="current_password" type="password" class="form-control" placeholder="Current password" required>
+		<br>
 		<button class="btn btn-default" type="submit">Change e-mail</button>
 	{{ Form::close() }}
   </div>
@@ -41,6 +42,7 @@
 		<input name="current_password" type="password" class="form-control" placeholder="Old password" required>
 		<input name="new_password" type="password" class="form-control" placeholder="New password" required>
 		<input name="new_password_confirmation" type="password" class="form-control" placeholder="Confirm new password" required>
+		<br>
 		<button class="btn btn-default" type="submit">Change password</button>
 	{{ Form::close() }}
   </div>
