@@ -73,9 +73,10 @@ class AuthController extends BaseController {
 			'password' => 'required|min:8|confirmed',
 		);
 
-		Input::get('email') = strtolower(Input::get('email'));
-
-		$validator = Validator::make(Input::all(), $rules);
+		$validator = Validator::make(array(
+			'email' => strtolower(Input::get('email')),
+			'password' => Input::get('passsword')
+		), $rules);
 
 		if ($validator->fails()) {
 			return Redirect::to('signup')
