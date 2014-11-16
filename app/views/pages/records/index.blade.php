@@ -35,6 +35,7 @@
                 <th>Artist</th>
                 <th>Title</th>
                 <th>Year</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -43,12 +44,18 @@
                   <td>{{{ $record->artist }}}</td>
                   <td>{{{ $record->title }}}</td>
                   <td>{{{ $record->year ? $record->year : 'Unknown' }}}</td>
+                  <td>
+                  {{ Form::open(array('route' => 'delete_record')) }}
+                    <input type="hidden" name="id" value="{{ $record->id }}">
+                    <button type="submit" class="close">&times;</button>
+                  {{ Form::close() }}
+                  </td>
                 </tr>
               @endforeach
             </tbody>
         </table>
   	@else
-  	    <p>You haven't added any records.</p>
+  	    <p>You don't have any records yet.</p>
   	@endif
   </div>
 

@@ -40,7 +40,23 @@ class RecordController extends BaseController
 
         $record->save();
 
-        return Redirect::to(route('get_records'))->with('message', 'Done!');
+        return Redirect::to(route('get_records'))->with('message', 'Record added.');
+    }
+
+    /**
+     * Delete a record for the current user.
+     */
+    public function deleteRecord()
+    {
+        $record = Auth::user()->records()->find(Input::get('id'));
+
+        if (!$record) {
+            return Redirect::to(route('get_records'));
+        }
+
+        $record->delete();
+
+        return Redirect::to(route('get_records'))->with('message', 'Record deleted.');
     }
 
 }
