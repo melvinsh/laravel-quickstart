@@ -40,7 +40,7 @@ bin/serve
 #### Dashboard
 ![screen shot 2014-11-15 at 23 36 47](https://cloud.githubusercontent.com/assets/1312973/5059579/9be62026-6d20-11e4-8a06-53f949b0bfa4.png)
 #### Records
-![screen shot 2014-11-15 at 23 36 59](https://cloud.githubusercontent.com/assets/1312973/5059582/aea52b62-6d20-11e4-8dac-3a80b6dcdd56.png)
+![screen shot 2014-11-16 at 01 25 29](https://cloud.githubusercontent.com/assets/1312973/5059857/7d94963e-6d2f-11e4-98d2-c7216085ab4e.png)
 #### Sign up
 ![screen shot 2014-11-15 at 23 41 06](https://cloud.githubusercontent.com/assets/1312973/5059587/ed4af63a-6d20-11e4-9e16-d263e657df82.png)
 #### Settings
