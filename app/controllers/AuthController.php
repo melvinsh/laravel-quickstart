@@ -23,7 +23,7 @@ class AuthController extends BaseController
     public function tryLogin()
     {
 
-        $attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
+        $attempt = Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
 
         if (!$attempt) {
             return Redirect::to('login')->with('error', 'Unknown username/password combination.');
@@ -78,10 +78,7 @@ class AuthController extends BaseController
             'password' => 'required|min:8|confirmed',
         );
 
-        $validator = Validator::make(array(
-            'email' => strtolower(Input::get('email')),
-            'password' => Input::get('passsword')
-        ), $rules);
+        $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
             return Redirect::to('signup')
