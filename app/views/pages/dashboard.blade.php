@@ -4,6 +4,7 @@
 
 @if($alert = Session::get('message'))
     <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{{ $alert }}}
     </div>
 @endif

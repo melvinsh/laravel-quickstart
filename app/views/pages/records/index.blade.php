@@ -8,12 +8,14 @@
 
 @if($errors->first())
     <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{{ $errors->first() }}}
     </div>
 @endif
 
 @if($message = Session::get('message'))
     <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{{ $message }}}
     </div>
 @endif
@@ -51,13 +53,23 @@
   </div>
 
   <div class="tab-pane" id="add">
-  <h3>Add record</h3>
    {{ Form::open(array('route' => 'add_record')) }}
-	    <input name="artist" type="text" class="form-control" placeholder="Artist" value="{{{ Input::old('artist') }}}" required>
-	    <input name="title" type="text" class="form-control" placeholder="Title" value="{{{ Input::old('title') }}}" required>
-	    <input name="year" type="number" class="form-control" placeholder="Year" value="{{{ Input::old('year') }}}">
-	    <br>
-	    <button class="btn btn-default" type="submit">Add record</button>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Artist</label>
+	    <input name="artist" type="text" class="form-control" placeholder="Enter artist" value="{{{ Input::old('artist') }}}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+	    <input name="title" type="text" class="form-control" placeholder="Enter title" value="{{{ Input::old('title') }}}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Year (optional)</label>
+	    <input name="year" type="number" class="form-control" placeholder="" value="{{{ Input::old('year') }}}">
+    </div>
+
+	   <button class="btn btn-default" type="submit">Add record</button>
 	{{ Form::close() }}
 </div>
 
