@@ -22,7 +22,7 @@ bin/serve
 
 - Set timezone to Europe/Amsterdam in [app / config / app.php].
 
-- Included Bootstrap, jQuery in [public]. 
+- Included Bootstrap, jQuery and DataTables in [public]. 
 - Created nice and simple view structure + bootstrap example.
 
 - Added User signup and authentication + messages and errors.
