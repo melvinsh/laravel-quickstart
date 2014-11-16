@@ -43,8 +43,9 @@ bin/serve
 ![screen shot 2014-11-16 at 01 25 29](https://cloud.githubusercontent.com/assets/1312973/5059857/7d94963e-6d2f-11e4-98d2-c7216085ab4e.png)
 ![screen shot 2014-11-16 at 01 46 15](https://cloud.githubusercontent.com/assets/1312973/5059906/680a1e6c-6d32-11e4-8015-b2e6c9a0134a.png)
 #### Sign in/Sign up
-![screen shot 2014-11-16 at 01 27 21](https://cloud.githubusercontent.com/assets/1312973/5059862/c977a000-6d2f-11e4-889d-7c6dd642f599.png)
-![screen shot 2014-11-16 at 01 27 26](https://cloud.githubusercontent.com/assets/1312973/5059863/ca17bf90-6d2f-11e4-84d6-0d9e1a47eadd.png)
+![signin](https://cloud.githubusercontent.com/assets/1312973/5059928/acd27db2-6d34-11e4-87a6-c9d3ffc3a6d6.png)
+![signup](https://cloud.githubusercontent.com/assets/1312973/5059930/acd30b6a-6d34-11e4-8b05-128c5ac898ec.png)
 #### Settings
-![screen shot 2014-11-16 at 01 26 50](https://cloud.githubusercontent.com/assets/1312973/5059859/a8884c78-6d2f-11e4-8ba0-706aaf56914e.png)
+![changeemail](https://cloud.githubusercontent.com/assets/1312973/5059926/acb57b04-6d34-11e4-8224-272eb97e91ce.png)
+![changepassword](https://cloud.githubusercontent.com/assets/1312973/5059929/acd2bc46-6d34-11e4-868e-27dd28cc7548.png)
 
