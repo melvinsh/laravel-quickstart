@@ -13,10 +13,16 @@
 		@endif
 
 		{{ Form::open(array('route' => 'post_login')) }}
-		    <input name="email" type="email" class="form-control" value="demo@demo.local" required autofocus>
-		    <input name="password" type="password" class="form-control" value="demo!" required>
-		    <input name="_token" type="hidden" value="{{{ csrf_token() }}}"><br>
-		    <button class="btn btn-default btn-block" type="submit">Sign in</button>
+		<div class="form-group">
+	  <label for="email">E-mail</label>
+		  <input name="email" type="email" class="form-control" placeholder="Enter e-mail" value="demo@demo.local" required autofocus>
+		</div>
+		<div class="form-group">
+	  <label for="password">Password</label>
+		  <input name="password" type="password" class="form-control" placeholder="Enter password" value="demo!" required>
+		</div>
+		  <input name="_token" type="hidden" value="{{{ csrf_token() }}}">
+		  <button class="btn btn-default btn-block" type="submit">Sign in</button>
 		{{ Form::close() }}
 	</div>
 </div>

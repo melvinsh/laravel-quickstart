@@ -55,21 +55,18 @@
   <div class="tab-pane" id="add">
    {{ Form::open(array('route' => 'add_record')) }}
     <div class="form-group">
-      <label for="exampleInputEmail1">Artist</label>
+      <label for="artist">Artist</label>
 	    <input name="artist" type="text" class="form-control" placeholder="Enter artist" value="{{{ Input::old('artist') }}}" required>
     </div>
-
     <div class="form-group">
-      <label for="exampleInputEmail1">Title</label>
+      <label for="title">Title</label>
 	    <input name="title" type="text" class="form-control" placeholder="Enter title" value="{{{ Input::old('title') }}}" required>
     </div>
-
     <div class="form-group">
-      <label for="exampleInputEmail1">Year (optional)</label>
-	    <input name="year" type="number" class="form-control" placeholder="" value="{{{ Input::old('year') }}}">
+      <label for="year">Year (optional)</label>
+	    <input name="year" type="number" class="form-control" value="{{{ Input::old('year') }}}">
     </div>
-
-	   <button class="btn btn-default" type="submit">Add record</button>
+	  <button class="btn btn-default" type="submit">Add record</button>
 	{{ Form::close() }}
 </div>
 
