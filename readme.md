@@ -41,6 +41,7 @@ bin/serve
 ![screen shot 2014-11-15 at 23 36 47](https://cloud.githubusercontent.com/assets/1312973/5059579/9be62026-6d20-11e4-8a06-53f949b0bfa4.png)
 #### Records
 ![screen shot 2014-11-16 at 01 25 29](https://cloud.githubusercontent.com/assets/1312973/5059857/7d94963e-6d2f-11e4-98d2-c7216085ab4e.png)
+![screen shot 2014-11-16 at 01 46 15](https://cloud.githubusercontent.com/assets/1312973/5059906/680a1e6c-6d32-11e4-8015-b2e6c9a0134a.png)
 #### Sign in/Sign up
 ![screen shot 2014-11-16 at 01 27 21](https://cloud.githubusercontent.com/assets/1312973/5059862/c977a000-6d2f-11e4-889d-7c6dd642f599.png)
 ![screen shot 2014-11-16 at 01 27 26](https://cloud.githubusercontent.com/assets/1312973/5059863/ca17bf90-6d2f-11e4-84d6-0d9e1a47eadd.png)
