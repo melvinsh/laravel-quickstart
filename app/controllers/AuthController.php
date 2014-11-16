@@ -16,6 +16,33 @@ class AuthController extends BaseController
     }
 
     /**
+     * Try to log the user in using email and password.
+     * On success: redirect to dashboard with welcome message.
+     * On error: redirect to login with error message,
+     */
+    public function tryLogin()
+    {
+
+        $attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
+
+        if (!$attempt) {
+            return Redirect::to('login')->with('error', 'Unknown username/password combination.');
+        }
+
+        $firstTime = !(Auth::user()->has_signed_in_once);
+
+        Auth::user()->saveSignIn();
+
+        if ($firstTime) {
+            return Redirect::intended('dashboard')
+                ->with('message', 'Welcome! Please read the instructions below!');
+        }
+
+        return Redirect::intended('dashboard');
+
+    }
+
+    /**
      * Logout user and redirect to login screen.
      */
     public function logout()
@@ -58,8 +85,8 @@ class AuthController extends BaseController
 
         if ($validator->fails()) {
             return Redirect::to('signup')
-                ->withErrors($validator)
-                ->withInput(Input::except(array('password', 'password_confirm')));;
+            ->withErrors($validator)
+            ->withInput(Input::except(array('password', 'password_confirm')));;
         }
 
         $user = User::create(array(
@@ -73,33 +100,6 @@ class AuthController extends BaseController
         $this->tryLogin();
 
         return Redirect::to('dashboard');
-
-    }
-
-    /**
-     * Try to log the user in using email and password.
-     * On success: redirect to dashboard with welcome message.
-     * On error: redirect to login with error message,
-     */
-    public function tryLogin()
-    {
-
-        $attempt = Auth::attempt(array('email' => strtolower(Input::get('email')), 'password' => Input::get('password')));
-
-        if (!$attempt) {
-            return Redirect::to('login')->with('error', 'Unknown username/password combination.');
-        }
-
-        $firstTime = !(Auth::user()->has_signed_in_once);
-
-        Auth::user()->saveSignIn();
-
-        if ($firstTime) {
-            return Redirect::intended('dashboard')
-                ->with('message', 'Welcome! Please read the instructions below!');
-        }
-
-        return Redirect::intended('dashboard');
 
     }
 

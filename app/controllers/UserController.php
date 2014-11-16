@@ -25,12 +25,12 @@ class UserController extends BaseController
 
         if ($validator->fails()) {
             return Redirect::to(route('get_settings'))
-                ->withErrors($validator);
+            ->withErrors($validator);
         }
 
         if (!Auth::user()->changeEmail(Input::get('new_email'), Input::get('current_password'))) {
             return Redirect::to(route('get_settings'))
-                ->withErrors(array('Current password is incorrect.'));
+            ->withErrors(array('Current password is incorrect.'));
         }
 
         return Redirect::to(route('get_settings'))->with('message', 'E-mail changed.');
@@ -50,12 +50,12 @@ class UserController extends BaseController
 
         if ($validator->fails()) {
             return Redirect::to(route('get_settings'))
-                ->withErrors($validator);
+            ->withErrors($validator);
         }
 
         if (!Auth::user()->changePassword(Input::get('new_password'), Input::get('current_password'))) {
             return Redirect::to(route('get_settings'))
-                ->withErrors(array('Current password is incorrect.'));
+            ->withErrors(array('Current password is incorrect.'));
         }
 
         return Redirect::to(route('get_settings'))->with('message', 'Password changed.');
