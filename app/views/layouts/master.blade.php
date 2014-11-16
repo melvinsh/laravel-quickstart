@@ -27,5 +27,8 @@
     </div>
     {{ HTML::script('js/jquery.min.js'); }}
     {{ HTML::script('js/bootstrap.min.js'); }}
+    {{ HTML::script('js/datatables.min.js'); }}
+    {{ HTML::script('js/datatables.bootstrap.min.js'); }}
+    {{ HTML::script('js/application.js'); }}
   </body>
 </html>

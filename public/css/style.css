@@ -5,3 +5,8 @@ body {
 .navbar-brand {
 	padding: 11px 15px 11px 0;
 }
+
+/* This makes Datatables prettier */
+#records_filter, #records_paginate {
+	float: right;
+}

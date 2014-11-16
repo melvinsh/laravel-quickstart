@@ -26,26 +26,28 @@
 <div id="myTabContent" class="tab-content">
   <br>
   <div class="tab-pane active in" id="list">
-   @if($records && $records->count())
-        <table class="table table-striped">
+    @if($records && $records->count())
+        <table id="records" class="table table-striped" cellspacing="0" width="100%">
             <thead>
+              <tr>
                 <th>Artist</th>
                 <th>Title</th>
                 <th>Year</th>
+              </tr>
             </thead>
             <tbody>
-                @foreach($records as $record)
+              @foreach($records as $record)
                 <tr>
-                <td>{{{ $record->artist }}}</td>
-                <td>{{{ $record->title }}}</td>
-                <td>{{{ $record->year ? $record->year : 'Unknown' }}}</td>
+                  <td>{{{ $record->artist }}}</td>
+                  <td>{{{ $record->title }}}</td>
+                  <td>{{{ $record->year ? $record->year : 'Unknown' }}}</td>
                 </tr>
-                @endforeach
+              @endforeach
             </tbody>
         </table>
-	@else
-	    <p>You haven't added any records.<p>
-	@endif
+  	@else
+  	    <p>You haven't added any records.</p>
+  	@endif
   </div>
 
   <div class="tab-pane" id="add">
