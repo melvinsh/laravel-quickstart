@@ -27,8 +27,8 @@ class RecordController extends BaseController
 
         if ($validator->fails()) {
             return Redirect::to(route('get_records'))
-            ->withErrors($validator)
-            ->withInput(Input::all());
+                ->withErrors($validator)
+                ->withInput(Input::all());
         }
 
         $record = Record::create(array(
