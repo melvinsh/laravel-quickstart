@@ -1,3 +1,4 @@
+![screen shot 2014-12-15 at 19 28 09](https://cloud.githubusercontent.com/assets/1312973/5441426/8c731702-8490-11e4-891e-609301b8c04f.png)
 ## Laravel Quickstart
 This is a standard Laravel project with a bunch of modifications. It includes example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. The entire list of changes is [below](#the-modifications).
 
