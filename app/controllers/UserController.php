@@ -17,7 +17,7 @@ class UserController extends BaseController
     public function changeEmail()
     {
         $rules = array(
-            'new_email' => 'required|email|unique:users',
+            'new_email' => 'required|email|unique:users,email',
             'current_password' => 'required',
         );
 
