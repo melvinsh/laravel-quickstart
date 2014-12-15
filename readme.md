@@ -16,7 +16,7 @@ bin/seed
 ### Testing
 If you want to use PHPUnit and run tests on each save, run these commands (not inside Homestead).
 ```
-npm install -g gulp    # Run once, anywhere.
+npm install -g gulp    # Run once, anywhere. Requires node.js.
 npm install            # Run once, inside the laravel-quickstart directory.
 gulp                   # Run every time you want to run tests on save.
 ```
