@@ -4,7 +4,7 @@ This is a standard Laravel project. I added, changed, and removed some things an
 Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies)!
 
 ### Getting started
-Install [Homestead](http://laravel.com/docs/4.2/homestead) if you haven't already, and add a site for laravel-quickstart.
+Install [Homestead](http://laravel.com/docs/4.2/homestead) if you haven't already, and add a site for laravel-quickstart. After that, run the following commands.
  
 ```
 homestead ssh
