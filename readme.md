@@ -1,7 +1,7 @@
 ## Laravel Quickstart
-This is a standard Laravel project. I added, changed, and removed some things and I created example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. 
+This is a standard Laravel project with a bunch of modifications to get started more quickly. It includes example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. The entire list of changes is [below](#the-modifications).
 
-Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies)!
+Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies) as well!
 
 ### Getting started
 Install [Homestead](http://laravel.com/docs/4.2/homestead) if you haven't already, and add a site for laravel-quickstart. After that, run the following commands.
@@ -21,7 +21,7 @@ npm install            # Run once, inside the laravel-quickstart directory.
 gulp                   # Run every time you want to run tests on save.
 ```
 
-### My changes
+### The modifications
 ```
 - Added deploy, seed, and refresh scripts in [bin].
 - Added Gulp for PHPUnit tests (with auto-testing and notifications).
