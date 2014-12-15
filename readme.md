@@ -5,19 +5,21 @@ Please submit issues if you find them, but have a look at `todo.md` first. Scree
 
 ### Getting started
 ```
-cd laravel-quickstart 
-nano bootstrap/start.php # add your own hostname here
+# Install Homestead if you haven't already
+# and add a site for laravel-quickstart.
+# http://laravel.com/docs/4.2/homestead
+
+homestead ssh
+cd Code/laravel-quickstart
 bin/deploy
 bin/seed
-bin/serve
 ```
 
 ### My changes
 ```
-- Added my hostname to [bootstrap / start.php].
-- Added deploy, seed, serve, refresh scripts in [bin].
+- Added deploy, seed, and refresh scripts in [bin].
 
-- Deleted postgres and sqlsrv and redis from [app / config {/,/ local} / database.php].
+- Removed everything but MySQL from [app / config {/,/ local} / database.php].
 - Set sqlite as default database driver for local and production [ˆ].
 
 - Set timezone to Europe/Amsterdam in [app / config / app.php].
