@@ -25,7 +25,7 @@ return array(
     |
      */
 
-    'url' => 'http://laravel.melvin.sh',
+    'url' => 'http://quickstart.app',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
