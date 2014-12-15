@@ -4,20 +4,27 @@ This is a standard Laravel project. I added, changed, and removed some things an
 Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies)!
 
 ### Getting started
+Install [Homestead](http://laravel.com/docs/4.2/homestead) if you haven't already, and add a site for laravel-quickstart.
+ 
 ```
-# Install Homestead if you haven't already
-# and add a site for laravel-quickstart.
-# http://laravel.com/docs/4.2/homestead
-
 homestead ssh
 cd Code/laravel-quickstart
 bin/deploy
 bin/seed
 ```
 
+### Testing
+If you want to use PHPUnit and run tests on each save, run these commands (not inside Homestead).
+```
+npm install -g gulp
+npm install
+gulp
+```
+
 ### My changes
 ```
 - Added deploy, seed, and refresh scripts in [bin].
+- Added Gulp for PHPUnit tests.
 
 - Removed everything but MySQL from [app / config {/,/ local} / database.php].
 
