@@ -1,10 +1,9 @@
-![screen shot 2014-12-15 at 19 28 09](https://cloud.githubusercontent.com/assets/1312973/5441426/8c731702-8490-11e4-891e-609301b8c04f.png)
-## Laravel Quickstart
+# Laravel Quickstart
 This is a standard Laravel project with a bunch of modifications. It includes example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. The entire list of changes is [below](#the-modifications).
 
 Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies) as well!
 
-### Getting started
+## Getting started
 Install [Homestead](http://laravel.com/docs/4.2/homestead) if you haven't already, and add a site for laravel-quickstart. After that, run the following commands.
  
 ```
@@ -23,7 +22,7 @@ gulp                   # Run every time you want to run tests on save.
 ```
 If necessary, change the `phpunit_location` variable in `gulpfile.js`.
 
-### The modifications
+## The modifications
 ```
 - Added deploy, seed, and refresh scripts in [bin].
 - Added Gulp for PHPUnit tests (with auto-testing and notifications).
@@ -46,7 +45,7 @@ If necessary, change the `phpunit_location` variable in `gulpfile.js`.
 - Removed CONTRIBUTING.md
 ```
 
-### Screenies
+## Screenies
 #### Dashboard
 ![screen shot 2014-11-15 at 23 36 47](https://cloud.githubusercontent.com/assets/1312973/5059579/9be62026-6d20-11e4-8a06-53f949b0bfa4.png)
 #### Records
