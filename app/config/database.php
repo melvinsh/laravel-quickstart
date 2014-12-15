@@ -26,7 +26,7 @@ return array(
 	|
 	 */
 
-	'default' => 'sqlite',
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -46,21 +46,15 @@ return array(
 
 	'connections' => array(
 
-		'sqlite' => array(
-			'driver' => 'sqlite',
-			'database' => __DIR__ . '/../database/production.sqlite',
-			'prefix' => '',
-		),
-
 		'mysql' => array(
 			'driver' => 'mysql',
 			'host' => 'localhost',
 			'database' => 'forge',
 			'username' => 'forge',
-			'password' => '',
+			'password' => 'secret',
 			'charset' => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix' => '',
+			'prefix' => 'quickstart_',
 		),
 
 	),
