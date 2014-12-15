@@ -31,7 +31,8 @@ Route::group(array('before' => 'auth'), function () {
 
     Route::group(array('before' => 'csrf'), function () {
         Route::post('user/settings/email', array('as' => 'change_email', 'uses' => 'UserController@changeEmail'));
-        Route::post('user/settings/password', array('as' => 'change_password', 'uses' => 'UserController@changePassword'));
+        Route::post('user/settings/password',
+            array('as' => 'change_password', 'uses' => 'UserController@changePassword'));
         Route::post('records/add', array('as' => 'add_record', 'uses' => 'RecordController@addRecord'));
         Route::post('records/delete', array('as' => 'delete_record', 'uses' => 'RecordController@deleteRecord'));
     });

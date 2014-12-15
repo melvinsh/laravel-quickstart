@@ -45,7 +45,6 @@ class AuthController extends BaseController
      */
     public function trySignUp()
     {
-
         $rules = array(
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
@@ -70,7 +69,6 @@ class AuthController extends BaseController
         $this->tryLogin();
 
         return Redirect::to('dashboard');
-
     }
 
     /**
@@ -80,7 +78,6 @@ class AuthController extends BaseController
      */
     public function tryLogin()
     {
-
         $attempt = Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
 
         if (!$attempt) {
@@ -97,7 +94,6 @@ class AuthController extends BaseController
         }
 
         return Redirect::intended('dashboard');
-
     }
 
 }
