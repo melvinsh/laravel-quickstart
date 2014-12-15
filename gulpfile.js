@@ -1,5 +1,5 @@
 /*
- * Gulpfile to enable automated testing with PHPUnit
+ * Gulpfile to enable automated testing with PHPUnit.
  */
 var _ = require('lodash');
 var gulp = require('gulp');
@@ -32,7 +32,7 @@ gulp.task('default', ['phpunit', 'watch'])
 
 
 
-// Function to display pretty notifications
+// Function to display pretty notifications.
 function testNotification(status, pluginName, override) {
     var options = {
         title:   ( status == 'pass' ) ? 'Hooray!' : 'Aww...',
