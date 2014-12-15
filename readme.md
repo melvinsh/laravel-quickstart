@@ -20,7 +20,7 @@ npm install -g gulp    # Run once, anywhere. Requires node.js.
 npm install            # Run once, inside the laravel-quickstart directory.
 gulp                   # Run every time you want to run tests on save.
 ```
-If necessary, change the `phpunit_location` variable in `gulpfile.js` (the default is `/usr/local/bin/phpunit`).
+If necessary, change the `phpunit_location` variable in `gulpfile.js`.
 
 ### The modifications
 ```
