@@ -9,7 +9,7 @@ var phpunit = require('gulp-phpunit');
 var phpunit_location = '/usr/local/bin/phpunit';
 
 /*
- * PHPUnit task. Looks for 'phpunit' in /usr/local/bin.
+ * PHPUnit task.
  */
 gulp.task('phpunit', function() {
     gulp.src('phpunit.xml')
