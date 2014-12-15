@@ -1,8 +1,14 @@
+/*
+ * Gulpfile to enable automated testing with PHPUnit
+ */
 var _ = require('lodash');
 var gulp = require('gulp');
 var notify = require('gulp-notify');
 var phpunit = require('gulp-phpunit');
 
+/*
+ * PHPUnit task. Looks for 'phpunit' in /usr/local/bin.
+ */
 gulp.task('phpunit', function() {
     gulp.src('phpunit.xml')
         .pipe(phpunit('/usr/local/bin/phpunit', { notify: true }))
@@ -10,18 +16,29 @@ gulp.task('phpunit', function() {
         .pipe(notify(testNotification('pass', 'phpunit')));
 });
 
+/*
+ * Registers PHP files (anything in the 'app' folder) to watch for PHPUnit.
+ */
+gulp.task('watch', function() {
+    gulp.watch('app/**/*.php', ['phpunit'])
+})
+
+/*
+ * The default actions when the 'gulp' command runs.
+ */
+gulp.task('default', ['phpunit', 'watch'])
+
+
+
+
+
+// Function to display pretty notifications
 function testNotification(status, pluginName, override) {
     var options = {
-        title:   ( status == 'pass' ) ? 'Tests Passed' : 'Tests Failed',
-        message: ( status == 'pass' ) ? '\n\nAll tests have passed!\n\n' : '\n\nOne or more tests failed...\n\n',
+        title:   ( status == 'pass' ) ? 'Hooray!' : 'Aww...',
+        message: ( status == 'pass' ) ? '\n\nAll tests have passed.\n\n' : '\n\nOne or more tests failed.\n\n',
         icon:    __dirname + '/node_modules/gulp-' + pluginName +'/assets/test-' + status + '.png'
     };
     options = _.merge(options, override);
     return options;
 }
-
-gulp.task('watch', function() {
-    gulp.watch('app/**/*.php', ['phpunit'])
-})
-
-gulp.task('default', ['phpunit', 'watch'])
