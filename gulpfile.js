@@ -6,12 +6,14 @@ var gulp = require('gulp');
 var notify = require('gulp-notify');
 var phpunit = require('gulp-phpunit');
 
+var phpunit_location = '/usr/local/bin/phpunit';
+
 /*
  * PHPUnit task. Looks for 'phpunit' in /usr/local/bin.
  */
 gulp.task('phpunit', function() {
     gulp.src('phpunit.xml')
-        .pipe(phpunit('/usr/local/bin/phpunit', { notify: true }))
+        .pipe(phpunit(phpunit_location, { notify: true }))
         .on('error', notify.onError(testNotification('fail', 'phpunit')))
         .pipe(notify(testNotification('pass', 'phpunit')));
 });
