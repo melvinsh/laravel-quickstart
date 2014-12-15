@@ -12,6 +12,13 @@
         </div>
       @endif
 
+      @if($alert = Session::get('message'))
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{{ $alert }}}
+        </div>
+      @endif
+
       {{ Form::open(array('route' => 'post_login')) }}
       <div class="form-group">
         <label for="email">E-mail</label>

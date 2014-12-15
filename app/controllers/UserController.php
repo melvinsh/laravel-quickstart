@@ -58,7 +58,9 @@ class UserController extends BaseController
                 ->withErrors(array('Current password is incorrect.'));
         }
 
-        return Redirect::to(route('get_settings'))->with('message', 'Password changed.');
+        Auth::logout();
+        return Redirect::to('login')->with('message', 'Password changed.');
+
     }
 
     /**

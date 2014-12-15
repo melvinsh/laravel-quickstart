@@ -45,6 +45,7 @@ class AuthController extends BaseController
      */
     public function trySignUp()
     {
+
         $rules = array(
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
