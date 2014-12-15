@@ -20,7 +20,6 @@ bin/seed
 - Added deploy, seed, and refresh scripts in [bin].
 
 - Removed everything but MySQL from [app / config {/,/ local} / database.php].
-- Set sqlite as default database driver for local and production [ˆ].
 
 - Set timezone to Europe/Amsterdam in [app / config / app.php].
 
