@@ -1,5 +1,5 @@
 ## Laravel Quickstart
-This is a standard Laravel project with a bunch of modifications to get started more quickly. It includes example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. The entire list of changes is [below](#the-modifications).
+This is a standard Laravel project with a bunch of modifications. It includes example controllers, models, views, routes, migrations, seeds and binaries to help you get started more quickly with your Laravel project. The entire list of changes is [below](#the-modifications).
 
 Please submit issues if you find them, but have a look at `todo.md` first. Screenshots are [below](#screenies) as well!
 
