@@ -95,9 +95,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             return false;
         }
 
-        $user = Auth::user();
-        $user->email = $new_email;
-        $user->save();
+        $this->email = $new_email;
+        $this->save();
 
         return true;
     }
@@ -114,9 +113,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             return false;
         }
 
-        $user = Auth::user();
-        $user->password = Hash::make($new_password);
-        $user->save();
+        $this->password = Hash::make($new_password);
+        $this->save();
 
         return true;
     }
