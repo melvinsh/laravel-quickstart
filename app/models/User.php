@@ -44,7 +44,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         $this->has_signed_in_once = true;
         $this->last_signin = date('Y-m-d H:i:s');
-
         $this->save();
     }
 
@@ -58,6 +57,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         if (Hash::check($password, $this->password)) {
             return true;
         }
+        
         return false;
     }
 
