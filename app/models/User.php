@@ -37,6 +37,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
+     * Display record count like: "1 record" or "2 records".
+     * @return string
+     */
+    public function echoRecordCount()
+    {
+        if ($this->count() == 1) {
+            return $this->records()->count() . " record";
+        }
+
+        return $this->records()->count() . " records";
+    }
+
+    /**
      * Set has_signed_in_once to true.
      * Update last_signin.
      */
@@ -59,28 +72,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         }
         
         return false;
-    }
-
-    /**
-     * Record count as an integer.
-     * @return int
-     */
-    private function recordCount()
-    {
-        return $this->records()->count();
-    }
-
-    /**
-     * Display record count like: "1 record" or "2 records".
-     * @return string
-     */
-    public function echoRecordCount()
-    {
-        if ($this->recordCount() == 1) {
-            return $this->recordCount() . " record";
-        }
-
-        return $this->recordCount() . " records";
     }
 
     /**
