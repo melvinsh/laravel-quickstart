@@ -42,7 +42,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     public function echoRecordCount()
     {
-        if ($this->count() == 1) {
+        if ($this->records()->count() == 1) {
             return $this->records()->count() . " record";
         }
 
