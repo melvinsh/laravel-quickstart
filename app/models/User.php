@@ -61,20 +61,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
-     * Check if given password matches password of User instance.
-     * @param $password string Password to check.
-     * @return bool
-     */
-    private function passwordMatches($password)
-    {
-        if (Hash::check($password, $this->password)) {
-            return true;
-        }
-        
-        return false;
-    }
-
-    /**
      * Change the email of a User.
      * @param $new_email string The new email.
      * @param $password  string The current password.
@@ -108,5 +94,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         $this->save();
 
         return true;
+    }
+
+    /**
+     * Check if given password matches password of User instance.
+     * @param $password string Password to check.
+     * @return bool
+     */
+    private function passwordMatches($password)
+    {
+        if (Hash::check($password, $this->password)) {
+            return true;
+        }
+
+        return false;
     }
 }
