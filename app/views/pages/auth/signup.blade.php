@@ -5,12 +5,7 @@
     <div class="col-sm-8 col-sm-offset-2">
       <h1 class="page-header">Sign up</h1>
 
-      @if($errors->first())
-        <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          {{{ $errors->first() }}}
-        </div>
-      @endif
+      @include('includes.messages')
 
       {{ Form::open(array('route' => 'post_signup')) }}
       <div class="form-group">

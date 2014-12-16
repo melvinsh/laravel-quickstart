@@ -5,19 +5,7 @@
     <div class="col-sm-8 col-sm-offset-2">
       <h1 class="page-header">Sign in</h1>
 
-      @if($alert = Session::get('error'))
-        <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          {{{ $alert }}}
-        </div>
-      @endif
-
-      @if($alert = Session::get('message'))
-        <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          {{{ $alert }}}
-        </div>
-      @endif
+      @include('includes.messages')
 
       {{ Form::open(array('route' => 'post_login')) }}
       <div class="form-group">

@@ -6,19 +6,7 @@
 
   <hr>
 
-  @if($errors->first())
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      {{{ $errors->first() }}}
-    </div>
-  @endif
-
-  @if($message = Session::get('message'))
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      {{{ $message }}}
-    </div>
-  @endif
+  @include('includes.messages')
 
   <ul class="nav nav-tabs">
     <li class="active"><a href="#list" data-toggle="tab">Show records</a></li>

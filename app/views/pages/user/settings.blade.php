@@ -6,17 +6,7 @@
 
   <hr>
 
-  @if($errors->first())
-    <div class="alert alert-danger">
-      {{{ $errors->first() }}}
-    </div>
-  @endif
-
-  @if($message = Session::get('message'))
-    <div class="alert alert-success">
-      {{{ $message }}}
-    </div>
-  @endif
+  @include('includes.messages')
 
   <ul class="nav nav-tabs">
     <li class="active"><a href="#email" data-toggle="tab">E-mail settings</a></li>
